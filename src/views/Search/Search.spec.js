@@ -4,12 +4,12 @@ import shallow from "enzyme/shallow";
 
 describe("The Search component", () => {
   describe("when it renders", () => {
-    it("should contain a search view", () => {
+    it("should contain the ItemsList component", () => {
       const searchWrapper = shallow(<Search />);
 
-      const content = searchWrapper.text();
+      const itemsListWrapper = searchWrapper.find("ItemsList");
 
-      expect(content).toBe("Search view");
+      expect(itemsListWrapper).toBeDefined();
     });
   });
 });

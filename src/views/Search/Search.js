@@ -1,5 +1,6 @@
 import React from "react";
+import ItemsList from "../../components/ItemsList";
 
 export function Search() {
-  return <div className="search-view">Search view</div>;
+  return <ItemsList />;
 }
