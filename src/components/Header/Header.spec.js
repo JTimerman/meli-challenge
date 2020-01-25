@@ -12,12 +12,12 @@ describe("The Header component", () => {
       expect(logo).toEqual(expect.stringContaining("Logo"));
     });
 
-    it("should display a SearchBox", () => {
+    it("should display a SearchBox component", () => {
       const headerWrapper = shallow(<Header />);
 
-      const searchBox = headerWrapper.text();
+      const searchBox = headerWrapper.find("SearchBox");
 
-      expect(searchBox).toEqual(expect.stringContaining("Logo"));
+      expect(searchBox).toBeDefined();
     });
   });
 });
