@@ -1,12 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import formatPrice from "../../../commons/functions/formatPrice";
 import "./Item.scss";
-
-function formatPrice(price) {
-  return `${
-    price.currency === "ARS" ? "$ " : "U$S "
-  }${price.amount.toString().replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ".")}`;
-}
 
 export function Item({ id, title, picture, price, free_shipping, condition }) {
   return (

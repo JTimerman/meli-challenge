@@ -1,0 +1,54 @@
+article {
+  margin: 20px auto;
+  padding: 20px;
+  min-width: 540px;
+  max-width: 1000px;
+  background-color: white;
+}
+
+.item-detail-container {
+  display: flex;
+
+  .item-detail-img-container {
+    flex: 2;
+    margin-right: 10px;
+
+    img {
+      width: 100%;
+      max-width: 650px;
+    }
+  }
+
+  .item-detail-info {
+    flex: 1;
+
+    .item-detail-condition-sold {
+      font-size: 14px;
+      color: #888888;
+    }
+
+    .item-detail-price {
+      font-size: 28px;
+      font-weight: normal;
+    }
+
+    .item-detail-buy {
+      padding: 10px;
+      background-color: #3483fa;
+      color: white;
+      border-radius: 4px;
+      border: none;
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+}
+
+.item-detail-description-title {
+  font-size: 20px;
+}
+
+.item-detail-description-text {
+  font-size: 14px;
+  color: #444;
+}
