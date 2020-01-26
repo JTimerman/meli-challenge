@@ -4,12 +4,27 @@ import shallow from "enzyme/shallow";
 
 describe("The Detail component", () => {
   describe("when it renders", () => {
-    it("should contain a Detail view", () => {
-      const detailWrapper = shallow(<Detail />);
+    describe("when the item exists", () => {
+      global.fetch = () => {
+        const response = {
+          error: false,
+          item: {
+            id: "ML12345"
+          }
+        };
 
-      const content = detailWrapper.text();
+        return JSON.stringify(response);
+      };
 
-      expect(content).toBe("Detail view");
+      it("should contain an ItemDetail component", () => {
+        const detailWrapper = shallow(
+          <Detail match={{ params: { id: "ML12345" } }} />
+        );
+
+        const itemDetailWrapper = detailWrapper.find("ItemDetail");
+
+        expect(itemDetailWrapper).toBeDefined();
+      });
     });
   });
 });

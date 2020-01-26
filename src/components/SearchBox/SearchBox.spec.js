@@ -1,11 +1,16 @@
 import React from "react";
 import { SearchBox } from "./SearchBox";
+import { MemoryRouter } from "react-router-dom";
 import shallow from "enzyme/shallow";
 
 describe("The SearchBox component", () => {
   describe("when it renders", () => {
     it("should contain a form", () => {
-      const searchBoxWrapper = shallow(<SearchBox />);
+      const searchBoxWrapper = shallow(
+        <MemoryRouter>
+          <SearchBox />
+        </MemoryRouter>
+      );
 
       const form = searchBoxWrapper.find("form");
 
@@ -14,7 +19,11 @@ describe("The SearchBox component", () => {
 
     describe("the form", () => {
       it("should display an input", () => {
-        const searchBoxWrapper = shallow(<SearchBox />);
+        const searchBoxWrapper = shallow(
+          <MemoryRouter>
+            <SearchBox />
+          </MemoryRouter>
+        );
         const form = searchBoxWrapper.find("form");
 
         const input = form.find("input");
@@ -23,7 +32,11 @@ describe("The SearchBox component", () => {
       });
 
       it("should display a button", () => {
-        const searchBoxWrapper = shallow(<SearchBox />);
+        const searchBoxWrapper = shallow(
+          <MemoryRouter>
+            <SearchBox />
+          </MemoryRouter>
+        );
         const form = searchBoxWrapper.find("form");
 
         const button = form.find("button");

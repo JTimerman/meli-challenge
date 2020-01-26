@@ -7,9 +7,9 @@ describe("The Header component", () => {
     it("should display a Logo", () => {
       const headerWrapper = shallow(<Header />);
 
-      const logo = headerWrapper.text();
+      const logo = headerWrapper.find("img");
 
-      expect(logo).toEqual(expect.stringContaining("Logo"));
+      expect(logo).toBeDefined();
     });
 
     it("should display a SearchBox component", () => {

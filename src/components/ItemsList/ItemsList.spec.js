@@ -5,7 +5,7 @@ import shallow from "enzyme/shallow";
 describe("The ItemsList component", () => {
   describe("when it renders", () => {
     it("should contain an ol", () => {
-      const itemsListWrapper = shallow(<ItemsList />);
+      const itemsListWrapper = shallow(<ItemsList items={[]} />);
 
       const ol = itemsListWrapper.find("ol");
 
