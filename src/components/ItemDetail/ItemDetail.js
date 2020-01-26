@@ -3,9 +3,8 @@ import React from "react";
 import formatPrice from "../../commons/functions/formatPrice";
 
 import "./ItemDetail.scss";
-import item from "./mockData";
 
-export function ItemDetail() {
+export function ItemDetail({ item }) {
   return (
     <article>
       <div className={"item-detail-container"}>
