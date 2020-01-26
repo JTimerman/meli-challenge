@@ -1,68 +1,72 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Meli Frontend Challenge
 
-## Available Scripts
+## Instalación
 
-In the project directory, you can run:
+Dentro del directorio principal ejecutar el siguiente comando:
+
+### `npm install`
+
+## Ejecución
+
+Para levantar la aplicación es necesario ejecutar los siguientes comandos:
 
 ### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `npm run server`
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Tests
+
+Se corren ejecutando el comando:
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Overview
 
-### `npm run build`
+Para realizar la aplicación utilicé el stack de tecnologías pedido en la consigna.
+El Frontend está desarrollado con React y Sass para los estilos.
+El Backend consiste en un sencillo servidor en Node utilizando Express.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Backend
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+El Backend se encuentra dividido en tres módulos:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Cliente
+2. Servicios
+3. Servidor
 
-### `npm run eject`
+El Cliente tiene la responsabilidad de conectarse con la API de MercadoLibre para obtener los recursos necesarios.
+Los Servicios tienen la responsabilidad de consumir esos recursos para exponer la información que requiere Frontend.
+El Servidor tiene la responsabilidad de proveer esta información por medio de los endpoints acordados en el Contrato.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Frontend
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+El Frontend consiste en el Header que contiene la barra de búsqueda y dos vistas:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Search
+2. Detail
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+La vista de Search muestra los resultados de la búsqueda.
+La vista de Detail muestra el detalle de un item.
 
-## Learn More
+# Consideraciones
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Generales
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Me tomé la libertad de no utilizar ningún modelo en particular de workflow de git dado que soy el único autor del repositorio. De tener que utilizar alguno prefiero el Feature Branch Workflow con el que estoy extremadamente familiarizado.
+2. Limité la cantidad de items (4) del lado del servidor a modo de reducir el tamaño de la respuesta.
+3. Utilizo enzyme (la libreria de Airbnb) para unit tests por una cuestion de familiaridad y conocimiento de la misma.
+4. La aplicación puede utilizarse solo con el teclado, sin uso del mouse.
+5. Prescindí de Redux dado que consideré que la cantidad de boilerplate que agrega no justifica su uso en una aplicación de este tamaño. De ser mayor probablemente hubiese utilizado Redux o alguna otra forma de control de estado.
+6. La categoría del item no forma parte del contrato para el endpoint de detalle, por esto no se incluyó en esa vista.
+7. Se puede acceder a la vista de detalle de item con el ID del mismo por medio de la URL.
 
-### Code Splitting
+## Time constraints
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+De tener más tiempo para dedicarle a la aplicación, tendría en cuenta las siguientes mejoras:
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. Implementacion de webpack aliases para mejorar imports readability
+2. Cantidad de Unti Tests
+3. Creación de servicios en el FE para conectar con BE
+4. Implementación de Loader
+5. Implementación de Mensajes de Error
+6. Implementación de animaciones para mejorar la UX
