@@ -1,10 +1,8 @@
 import React from "react";
-import "./ItemsList.scss";
 import Item from "./Item";
+import "./ItemsList.scss";
 
-import items from "./mockData.json";
-
-export function ItemsList() {
+export function ItemsList({ items }) {
   return (
     <ol className={"items-list"}>
       {items.map(item => (

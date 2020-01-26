@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import isEmpty from "lodash/isEmpty";
+
 import ItemDetail from "../../components/ItemDetail";
 
 export function Detail({ match }) {
@@ -18,7 +20,7 @@ export function Detail({ match }) {
       });
   }, [id]);
 
-  return !item.price ? null : (
+  return isEmpty(item) ? null : (
     <div className="detail-view">
       <ItemDetail item={item} />
     </div>
