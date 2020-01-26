@@ -4,21 +4,21 @@
 
 Dentro del directorio principal ejecutar el siguiente comando:
 
-### `npm install`
+`npm install`
 
 ## Ejecución
 
 Para levantar la aplicación es necesario ejecutar los siguientes comandos:
 
-### `npm start`
+`npm start`
 
-### `npm run server`
+`npm run server`
 
 ## Tests
 
 Se corren ejecutando el comando:
 
-### `npm test`
+`npm test`
 
 # Overview
 
