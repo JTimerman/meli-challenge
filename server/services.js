@@ -59,7 +59,7 @@ exports.getItemDetail = query => {
           amount: parseInt(amount),
           decimals: parseInt(decimals)
         },
-        pricture: item.thumbnail,
+        picture: item.thumbnail,
         condition: item.condition,
         free_shipping: item.shipping.free_shipping,
         sold_quantity: item.sold_quantity,
